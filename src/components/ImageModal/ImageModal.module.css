@@ -1,0 +1,39 @@
+/* App.css */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  background: rgba(189, 168, 168, 0.233);
+  padding: 30px;
+  border-radius: 12px;
+  outline: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal_image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.close_btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999999;
+}

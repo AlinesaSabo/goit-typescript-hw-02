@@ -1,0 +1,43 @@
+.form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: rgba(218, 70, 181, 0.274);
+  color: aliceblue;
+}
+
+.button {
+  position: absolute;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.button svg {
+  width: 30px;
+  height: 30px;
+  fill: #a0076d9f;
+}
+
+.button:hover svg {
+  fill: #000;
+}
+
+.input::placeholder {
+  color: #a0076d70;
+  opacity: 1;
+}
