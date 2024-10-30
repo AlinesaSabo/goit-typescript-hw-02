@@ -5,11 +5,15 @@ import { Image } from "../../types";
 type ImageModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  image?: Image;
+  imageSrc?: Image;
 };
 
-const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, image }) => {
-  if (!image) return null;
+const ImageModal: React.FC<ImageModalProps> = ({
+  isOpen,
+  onClose,
+  imageSrc,
+}) => {
+  if (!imageSrc) return null;
 
   return (
     <Modal
@@ -23,8 +27,8 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, image }) => {
         ×
       </button>
       <img
-        src={image.urls.regular}
-        alt={image.alt_description}
+        src={imageSrc.urls.regular}
+        alt={imageSrc.alt_description}
         className={s.modal_image}
       />
     </Modal>

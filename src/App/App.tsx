@@ -16,7 +16,9 @@ const App = () => {
   const [isError, setIsError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>("");
-  const [selectedImage, setSelectedImage] = useState<string>("");
+  const [selectedImage, setSelectedImage] = useState<Image | undefined>(
+    undefined
+  );
   const { isOpen, openModal, closeModal } = useToggle();
 
   useEffect(() => {
@@ -49,24 +51,24 @@ const App = () => {
   };
 
   const handleImageClick = (image: Image) => {
-    setSelectedImage(image.urls.regular);
+    setSelectedImage(image);
     openModal();
   };
 
   return (
     <div>
-      <SearchBar handleSetQuery={handleSetQuery} />
+      <SearchBar onSubmit={handleSetQuery} />
       {images.length > 0 && (
-        <ImageGallery images={images} onImageClick={handleImageClick} />
+        <ImageGallery items={images} onImageClick={handleImageClick} />
       )}
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
       {!isLoading && images.length > 0 && (
-        <LoadMoreBtn handleChangePage={handleChangePage} />
+        <LoadMoreBtn onClick={handleChangePage} />
       )}
       <ImageModal
         isOpen={isOpen}
-        onRequestClose={closeModal}
+        onClose={closeModal}
         imageSrc={selectedImage}
       />
     </div>
